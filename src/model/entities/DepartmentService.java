@@ -15,6 +15,14 @@ public class DepartmentService {
 		return dao.findAll();
 	}
 	
-	
+	// para numa unica ação, se não tiver id, é inserção, e se já tiver id, é atualização
+	public void saveOrUpdate(Department obj) {
+		if (obj.getId() == null) {
+			dao.insert(obj);
+		}
+		else {
+			dao.update(obj);
+		}
+	}
 	
 }

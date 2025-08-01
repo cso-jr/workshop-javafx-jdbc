@@ -12,4 +12,15 @@ public class Utils {
 	}
 	
 	
+	//para ler o dado e , caso de um erro no parse, retornar nulo
+	public static Integer tryParseToInt(String str) {
+		try {
+			return Integer.parseInt(str);	
+		}
+		catch (NumberFormatException e) {
+			return null;
+		}
+		
+	}
+	
 }
