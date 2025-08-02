@@ -1,22 +1,23 @@
-package model.entities;
+package model.services;
 
 import java.util.List;
 
 import model.dao.DaoFactory;
-import model.dao.DepartmentDao;
+import model.dao.SellerDao;
+import model.entities.Seller;
 
-public class DepartmentService {
+public class SellerService {
 
 	
-	private DepartmentDao dao = DaoFactory.createDepartmentDao();
+	private SellerDao dao = DaoFactory.createSellerDao();
 	
-	public List<Department> findAll(){
+	public List<Seller> findAll(){
 		
 		return dao.findAll();
 	}
 	
 	// para numa unica ação, se não tiver id, é inserção, e se já tiver id, é atualização
-	public void saveOrUpdate(Department obj) {
+	public void saveOrUpdate(Seller obj) {
 		if (obj.getId() == null) {
 			dao.insert(obj);
 		}
@@ -26,7 +27,7 @@ public class DepartmentService {
 	}
 	
 	
-	public void remove(Department obj) {
+	public void remove(Seller obj) {
 		dao.deleteById(obj.getId());
 	}
 	
